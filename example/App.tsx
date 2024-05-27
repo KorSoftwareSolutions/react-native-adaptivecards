@@ -1,12 +1,13 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import * as t from "adaptivecards-rn";
+import { StyleSheet, View } from "react-native";
+import { AdaptiveCard } from "adaptivecards-rn";
+import payload from "../payloads/example1.json";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
       <StatusBar style="auto" />
+      <AdaptiveCard payload={payload} />
     </View>
   );
 }

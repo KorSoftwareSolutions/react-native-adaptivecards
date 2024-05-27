@@ -1,3 +1,1 @@
-export const test = () => {
-  console.log("Hello from test");
-};
+export { AdaptiveCard } from "./src/components/cards/adaptive-card";
