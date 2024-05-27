@@ -60,3 +60,11 @@ export enum ImageFillMode {
   RepeatVertically = "repeatVertically",
   Repeat = "repeat",
 }
+
+export enum ImageSize {
+  Auto = "auto",
+  Stretch = "stretch",
+  Small = "small",
+  Medium = "medium",
+  Large = "large",
+}

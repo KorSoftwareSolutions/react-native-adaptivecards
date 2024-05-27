@@ -1,5 +1,5 @@
 import { Colors, FontSize, FontType, FontWeight, HorizontalAlignment } from "../../utils/design-tokens";
-import { ICardElement } from "./card-elements.types";
+import { ICardElement } from "./card-element.types";
 
 export interface ITextBlock extends ICardElement {
   type: "TextBlock";

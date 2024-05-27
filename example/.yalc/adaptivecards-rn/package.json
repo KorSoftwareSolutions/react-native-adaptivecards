@@ -1,0 +1,32 @@
+{
+  "name": "adaptivecards-rn",
+  "version": "0.1.0",
+  "description": "Adaptive Cards for React Native",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "directories": {
+    "lib": "lib",
+    "example": "example"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "dev": "nodemon",
+    "build": "tsc"
+  },
+  "author": {
+    "email": "ion@korol.dev",
+    "name": "Ion Korol",
+    "url": "https://korsolutions.net"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "dependencies": {
+    "react-native-video": "^6.1.2"
+  },
+  "yalcSig": "97fb63bcc5c7e7c28d7a7f7cf9eede57"
+}
