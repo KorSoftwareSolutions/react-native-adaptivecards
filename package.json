@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "dev": "nodemon",
-    "build": "tsc"
+    "build": "./scripts/build.sh"
   },
   "author": {
     "email": "ion@korol.dev",
@@ -30,6 +30,6 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "react-native-video": "^6.1.2"
+    "react-native-webview": "^13.10.2"
   }
 }

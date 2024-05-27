@@ -27,17 +27,10 @@ export const CardElement = (providedProps: React.PropsWithChildren<ICardElement>
     return null;
   }
 
-  // if (isInvalid) {
-  // if (FallbackElement) {
-  //   return <FallbackElement {...props} />;
-  // }
-  // return null;
-  // }
-
   return (
-    <React.Fragment>
+    <>
       {props.separator && <Separator />}
       {props.children}
-    </React.Fragment>
+    </>
   );
 };

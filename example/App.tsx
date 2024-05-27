@@ -1,7 +1,7 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, View } from "react-native";
 import { AdaptiveCard } from "adaptivecards-rn";
-import payload from "./payloads/example1.json";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import payload from "./payloads/payload1.json";
 
 export default function App() {
   return (
@@ -16,8 +16,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "gray",
-    padding: 20,
   },
 });

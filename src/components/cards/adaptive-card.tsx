@@ -40,7 +40,7 @@ export const AdaptiveCard = (props: IAdaptiveCardProps) => {
         }
         return (
           <CardElement {...element} key={index}>
-            <Element {...element} />;
+            <Element {...element} />
           </CardElement>
         );
       })}
