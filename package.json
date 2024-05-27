@@ -1,6 +1,11 @@
 {
-  "name": "adaptivecards-react-native",
-  "version": "1.0.0",
+  "name": "adaptivecards-rn",
+  "version": "0.1.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "description": ""
 }
