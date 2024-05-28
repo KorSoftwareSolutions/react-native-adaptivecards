@@ -5,12 +5,12 @@
   "body": [
     {
       "type": "TextBlock",
-      "text": "This is some text",
+      "text": "This is some text #Heading 1",
       "size": "large"
     },
     {
       "type": "TextBlock",
-      "text": "It doesn't wrap by default",
+      "text": "It doesn't wrap by default ##Heading 2",
       "weight": "bolder"
     },
     {

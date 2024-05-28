@@ -126,6 +126,7 @@ export interface IHostConfig {
   media?: IMediaConfig;
 
   inputs?: IInputsConfig; // Missing on the docs https://learn.microsoft.com/en-us/adaptive-cards/rendering-cards/host-config
+  textBlock?: ITextBlockConfig; // Missing on the docs https://learn.microsoft.com/en-us/adaptive-cards/rendering-cards/host-config
 }
 
 export interface IActionsConfig {

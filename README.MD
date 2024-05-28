@@ -26,6 +26,7 @@
 ## Card Elements
 
 - [ ] TextBlock
+  - [ ] Markdown support
 - [ ] Image
 - [ ] Media
 - [ ] MediaSource

@@ -1,7 +1,8 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, TextStyle } from "react-native";
 import { ITextBlock, TextBlockStyle } from "./text-block.types";
 import { useHostConfig } from "../../hooks/useHostConfig";
+import { markdownFormatter } from "../../utils/markdown-formatter";
 
 const DEFAULT_PROPS: ITextBlock = {
   type: "TextBlock",
@@ -14,8 +15,15 @@ export const TextBlock = (providedProps: ITextBlock) => {
   const { hostConfig } = useHostConfig();
 
   /* ******************** Variables ******************** */
+  const composedStyles: TextStyle = {};
+  if (props.color) {
+    // composedStyles.color =
+  }
+  if (props.size) {
+    // composedStyles.fontSize = hostConfig.fontSizes[props.size];
+  }
   /* ******************** Functions ******************** */
   /* ******************** Effects ******************** */
   /* ******************** JSX ******************** */
-  return <Text>{props.text}</Text>;
+  return <Text>{markdownFormatter(props.text)}</Text>;
 };

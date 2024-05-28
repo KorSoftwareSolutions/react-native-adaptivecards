@@ -13,7 +13,7 @@ export const TextBlockScreen = () => {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <AdaptiveCardDemo title="General" payload={TextBlockSamples.main} />
-      <AdaptiveCardDemo title="Colors" payload={TextBlockSamples.colors} />
+      {/* <AdaptiveCardDemo title="Colors" payload={TextBlockSamples.colors} />
       <AdaptiveCardDemo title="Font Type" payload={TextBlockSamples.fontType} />
       <AdaptiveCardDemo title="Horizontal Alignment" payload={TextBlockSamples.horizontalAlignment} />
       <AdaptiveCardDemo title="Is Subtle" payload={TextBlockSamples.isSubtle} />
@@ -21,7 +21,7 @@ export const TextBlockScreen = () => {
       <AdaptiveCardDemo title="Size" payload={TextBlockSamples.size} />
       <AdaptiveCardDemo title="Style" payload={TextBlockSamples.style} />
       <AdaptiveCardDemo title="Weight" payload={TextBlockSamples.weight} />
-      <AdaptiveCardDemo title="Wrap" payload={TextBlockSamples.wrap} />
+      <AdaptiveCardDemo title="Wrap" payload={TextBlockSamples.wrap} /> */}
     </ScrollView>
   );
 };
