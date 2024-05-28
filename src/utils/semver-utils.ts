@@ -18,46 +18,35 @@ export const parseSemver = (
   return { major, minor, patch };
 };
 
-export const isSemverHigher = (current: string, target: string): boolean => {
+const isSemverLower = (current: string, target: string): boolean => {
   const currentVersion = parseSemver(current);
   const targetVersion = parseSemver(target);
-
-  if (currentVersion.major > targetVersion.major) {
-    return true;
-  }
   if (currentVersion.major < targetVersion.major) {
-    return false;
-  }
-
-  if (currentVersion.minor > targetVersion.minor) {
     return true;
   }
-
-  if (currentVersion.minor < targetVersion.minor) {
-    return false;
-  }
-
-  if (currentVersion.patch > targetVersion.patch) {
+  if (currentVersion.major === targetVersion.major && currentVersion.minor < targetVersion.minor) {
     return true;
   }
-
+  if (currentVersion.major === targetVersion.major && currentVersion.minor === targetVersion.minor && currentVersion.patch < targetVersion.patch) {
+    return true;
+  }
   return false;
 };
 
 export const isSemverEqual = (current: string, target: string): boolean => {
   const currentVersion = parseSemver(current);
   const targetVersion = parseSemver(target);
-
+  console.log(currentVersion, targetVersion, "currentVersion, targetVersion");
   return currentVersion.major === targetVersion.major && currentVersion.minor === targetVersion.minor && currentVersion.patch === targetVersion.patch;
 };
 
-export const isSemverHigherOrEqual = (current: string, target: string): boolean => {
-  return isSemverHigher(current, target) || isSemverEqual(current, target);
+export const isSemverLowerOrEqual = (current: string, target: string): boolean => {
+  return isSemverLower(current, target) || isSemverEqual(current, target);
 };
 
 export const semverUtils = {
   parseSemver,
-  isSemverHigher,
+  isSemverLower,
   isSemverEqual,
-  isSemverHigherOrEqual,
+  isSemverLowerOrEqual,
 };

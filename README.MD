@@ -8,8 +8,23 @@
 - [ ] Body
 - [ ] Actions
 - [ ] Select Action
+- [ ] Background Image
+  - [x] As a string
+  - [x] Object url
+  - [x] Fill Mode
+  - [ ] Horizontal Alignment
+  - [ ] Vertical Alignment
+- [ ] Metadata
+- [x] Min Height
+- [ ] RTL
+  - [ ] TextBlock
+  - [ ] RichTextBlock
+- [x] Speak
+- [ ] Lang
+- [x] Vertical Content Alignment
 
 ## Card Elements
+
 - [ ] TextBlock
 - [ ] Image
 - [ ] Media
@@ -19,13 +34,13 @@
 - [ ] TextRun
 
 ### Card Element
+
 - [ ] Fallback
 - [ ] Separator
 - [ ] Spacing
 - [ ] Id
-- [X] IsVisible
+- [x] IsVisible
 - [ ] Requires
-
 
 ## Containers
 

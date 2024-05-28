@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IMedia, IMediaSource } from "./media.types";
+import { ICaptionSource, IMedia, IMediaSource } from "./media.types";
 import WebView from "react-native-webview";
 import { TextBlock } from "./text-block";
 import { StyleSheet, Image, TouchableOpacity, Dimensions } from "react-native";
@@ -8,14 +8,20 @@ const DEFAULT_PROPS: IMedia = {
   type: "Media",
   poster: "https://placehold.co/400",
   sources: [],
+  captionSources: [],
 };
 
-const generateVideoHtml = (sources: IMediaSource[]) => `
+const generateVideoHtml = (sources: IMediaSource[], captions: ICaptionSource[]) => `
   <video controls autoplay style="width: 100%;">
    ${sources.map(
      (source) => `
       <source src="${source.url}" type="${source.mimeType}">
     `
+   )}
+   ${captions.map(
+     (caption) => `
+        <track src="${caption.url}" kind="subtitles" label="${caption.label}">
+      `
    )}
     Your browser does not support the video tag.
   </video>
@@ -53,7 +59,13 @@ export const Media = (providedProps: IMedia) => {
   }
 
   if (mediaType === "video") {
-    return <WebView source={{ html: generateVideoHtml(props.sources) }} containerStyle={styles.videoContainer} scalesPageToFit />;
+    return (
+      <WebView
+        source={{ html: generateVideoHtml(props.sources, props.captionSources || []) }}
+        containerStyle={styles.videoContainer}
+        scalesPageToFit
+      />
+    );
   }
   if (mediaType === "audio") {
     return <WebView source={{ html: generateAudioHtml(props.sources) }} containerStyle={styles.container} />;

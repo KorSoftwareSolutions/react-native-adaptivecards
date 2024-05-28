@@ -20,6 +20,7 @@ export const CardElement = (providedProps: React.PropsWithChildren<ICardElement>
   }, [props.fallback]);
 
   const isInvalid = false;
+
   /* ******************** Functions ******************** */
   /* ******************** Effects ******************** */
   /* ******************** JSX ******************** */
