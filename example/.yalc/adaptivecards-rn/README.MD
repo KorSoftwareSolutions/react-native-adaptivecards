@@ -27,6 +27,21 @@
 
 - [ ] TextBlock
   - [ ] Markdown support
+    - [ ] Bold
+    - [ ] Italic
+    - [ ] Bullet list
+    - [ ] Numbered list
+    - [ ] Hyperlinks
+  - [ ] Color
+  - [ ] Font Type
+  - [ ] Horizontal Alignment
+  - [ ] Is Subtle
+  - [ ] Max Lines
+  - [ ] Size
+  - [ ] Weight
+  - [ ] Wrap
+  - [ ] Style
+  - [ ] Custom styles
 - [ ] Image
 - [ ] Media
 - [ ] MediaSource

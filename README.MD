@@ -26,7 +26,22 @@
 ## Card Elements
 
 - [ ] TextBlock
-  - [ ] Markdown support
+  - [x] Markdown support
+    - [x] Bold
+    - [x] Italic
+    - [x] Bullet list
+    - [x] Numbered list
+    - [x] Hyperlinks
+  - [ ] Color
+  - [ ] Font Type
+  - [ ] Horizontal Alignment
+  - [ ] Is Subtle
+  - [ ] Max Lines
+  - [ ] Size
+  - [ ] Weight
+  - [ ] Wrap
+  - [ ] Style
+  - [ ] Custom styles
 - [ ] Image
 - [ ] Media
 - [ ] MediaSource

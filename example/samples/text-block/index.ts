@@ -4,6 +4,7 @@ export const TextBlockSamples = {
   horizontalAlignment: require("./horizontal-alignment.json"),
   isSubtle: require("./is-subtle.json"),
   main: require("./main.json"),
+  markdown: require("./markdown.json"),
   maxLines: require("./max-lines.json"),
   size: require("./size.json"),
   style: require("./style.json"),

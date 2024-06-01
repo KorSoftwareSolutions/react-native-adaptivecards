@@ -36,7 +36,6 @@ const isSemverLower = (current: string, target: string): boolean => {
 export const isSemverEqual = (current: string, target: string): boolean => {
   const currentVersion = parseSemver(current);
   const targetVersion = parseSemver(target);
-  console.log(currentVersion, targetVersion, "currentVersion, targetVersion");
   return currentVersion.major === targetVersion.major && currentVersion.minor === targetVersion.minor && currentVersion.patch === targetVersion.patch;
 };
 

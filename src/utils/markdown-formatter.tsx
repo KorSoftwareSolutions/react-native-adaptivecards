@@ -17,11 +17,7 @@ const ComponentMap: Record<string, React.FC<React.PropsWithChildren>> = {
 
 const RULES: IRule[] = [
   { name: "bold", pattern: /\*\*(.*?)\*\*/g },
-  { name: "bold", pattern: /__(.*?)__/g },
   { name: "italic", pattern: /_(.*?)_/g },
-  { name: "italic", pattern: /\*(.*?)\*/g },
-  { name: "heading2", pattern: /##(.*?)/g },
-  { name: "heading1", pattern: /#(.*?)/g },
   { name: "link", pattern: /\[(.*?)\]\((.*?)\)/g },
   { name: "list", pattern: /\n\d\.(.*?)/g },
   { name: "list", pattern: /\n\d\)(.*?)/g },
@@ -50,7 +46,6 @@ export const markdownFormatter = (markdown?: string): JSX.Element[] => {
     }
     segments = newSegments;
   }
-  console.log(segments);
   return segments.map((segment, index) => {
     const Component = ComponentMap[segment.name];
     return <Component key={index}>{segment.text}</Component>;

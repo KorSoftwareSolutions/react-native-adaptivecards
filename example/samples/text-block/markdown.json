@@ -1,0 +1,25 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "This is some **bold** text\r"
+    },
+    {
+      "type": "TextBlock",
+      "text": "This is some _italic_ text\r"
+    },
+    {
+      "type": "TextBlock",
+      "text": "- Bullet \r- List \r",
+      "wrap": true
+    },
+    {
+      "type": "TextBlock",
+      "text": "1. Numbered\r2. List\r",
+      "wrap": true
+    }
+  ]
+}
