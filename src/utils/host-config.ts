@@ -1,5 +1,36 @@
 import { Colors, FontSize, FontWeight, ImageSize, Spacing } from "./design-tokens";
 
+const defaultForegroundColors: IForegroundColorsConfig = {
+  [Colors.Default]: {
+    default: "#000000",
+    subtle: "#767676",
+  },
+  [Colors.Accent]: {
+    default: "#0063B1",
+    subtle: "#0063B1",
+  },
+  [Colors.Good]: {
+    default: "#54a254",
+    subtle: "#DD54a254",
+  },
+  [Colors.Warning]: {
+    default: "#c3ab23",
+    subtle: "#DDc3ab23",
+  },
+  [Colors.Attention]: {
+    default: "#FF0000",
+    subtle: "#DDFF0000",
+  },
+  [Colors.Dark]: {
+    default: "#000000",
+    subtle: "#66000000",
+  },
+  [Colors.Light]: {
+    default: "#FFFFFF",
+    subtle: "#33000000",
+  },
+};
+
 export const defaultHostConfig: IHostConfig = {
   allowCustomStyle: true,
   supportsInteractivity: true,
@@ -23,8 +54,14 @@ export const defaultHostConfig: IHostConfig = {
   },
   containerStyles: {
     // TODO: Add some defaults
-    default: {},
-    emphasis: {},
+    default: {
+      backgroundColor: "#FFFFFF",
+      foregroundColors: defaultForegroundColors,
+    },
+    emphasis: {
+      backgroundColor: "#F0F0F0",
+      foregroundColors: defaultForegroundColors,
+    },
   },
   imageSizes: {
     small: 80,
@@ -108,7 +145,7 @@ export const defaultHostConfig: IHostConfig = {
   },
 };
 
-export interface IHostConfig {
+export class IHostConfig {
   allowCustomStyle?: boolean;
   supportsInteractivity?: boolean;
   imageBaseUrl?: string;

@@ -32,7 +32,7 @@
     - [x] Bullet list
     - [x] Numbered list
     - [x] Hyperlinks
-  - [ ] Color
+  - [x] Color
   - [ ] Font Type
   - [ ] Horizontal Alignment
   - [ ] Is Subtle

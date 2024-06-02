@@ -26,12 +26,12 @@
 ## Card Elements
 
 - [ ] TextBlock
-  - [ ] Markdown support
-    - [ ] Bold
-    - [ ] Italic
-    - [ ] Bullet list
-    - [ ] Numbered list
-    - [ ] Hyperlinks
+  - [x] Markdown support
+    - [x] Bold
+    - [x] Italic
+    - [x] Bullet list
+    - [x] Numbered list
+    - [x] Hyperlinks
   - [ ] Color
   - [ ] Font Type
   - [ ] Horizontal Alignment
