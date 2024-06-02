@@ -9,12 +9,12 @@
       },
       {
         "type": "TextBlock",
-        "text": "Font type set to *default*.",
+        "text": "Font type set to _default_.",
         "fontType": "default"
       },
       {
         "type": "TextBlock",
-        "text": "Font type set to *monospace*.",
+        "text": "Font type set to _monospace_.",
         "fontType": "monospace"
       }
     ]

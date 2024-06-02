@@ -34,7 +34,16 @@ const defaultForegroundColors: IForegroundColorsConfig = {
 export const defaultHostConfig: IHostConfig = {
   allowCustomStyle: true,
   supportsInteractivity: true,
-  fontFamily: "Calibri",
+  fontFamily: {
+    default: {
+      regular: "Arial",
+      italic: "Arial Italic",
+    },
+    monospace: {
+      regular: "Courier New",
+      italic: "Courier New",
+    },
+  },
   actions: {
     actionsOrientation: "horizontal",
     actionAlignment: "stretch",
@@ -149,7 +158,7 @@ export class IHostConfig {
   allowCustomStyle?: boolean;
   supportsInteractivity?: boolean;
   imageBaseUrl?: string;
-  fontFamily?: string;
+  fontFamily?: IFontFamilyConfig;
   actions?: IActionsConfig;
   adaptiveCard?: IHostConfig;
   containerStyles?: IContainerStylesConfig;
@@ -265,4 +274,15 @@ export interface IErrorMessagesConfig {
   spacing?: Spacing;
   size?: FontSize;
   weight?: FontWeight;
+}
+
+export interface IFontFamilyConfig {
+  default?: {
+    regular?: string;
+    italic?: string;
+  };
+  monospace?: {
+    regular?: string;
+    italic?: string;
+  };
 }
