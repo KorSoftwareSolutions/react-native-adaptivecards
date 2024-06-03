@@ -37,6 +37,7 @@ export const TextBlock = (providedProps: ITextBlock) => {
     fontSize: hostConfig?.fontSizes?.[props.size],
     color: hostConfig?.containerStyles?.default?.foregroundColors?.[props.color].default,
     fontFamily: props.fontType === FontType.Monospace ? hostConfig.fontFamily?.monospace?.regular : hostConfig.fontFamily?.default?.regular,
+    textAlign: props.horizontalAlignment.toLowerCase(),
   };
 
   /* ******************** Functions ******************** */

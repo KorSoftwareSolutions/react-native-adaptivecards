@@ -33,7 +33,7 @@
     - [x] Numbered list
     - [x] Hyperlinks
   - [x] Color
-  - [ ] Font Type
+  - [x] Font Type
   - [ ] Horizontal Alignment
   - [ ] Is Subtle
   - [ ] Max Lines
