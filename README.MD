@@ -40,8 +40,7 @@
   - [x] Size
   - [x] Weight
   - [x] Wrap
-  - [ ] Style
-  - [ ] Custom styles
+  - [x] Style
 - [ ] Image
 - [ ] Media
 - [ ] MediaSource

@@ -43,4 +43,13 @@ export class TextBlockStyles {
     }
     return 1;
   };
+
+  getHeadingStyle = (): TextStyle => {
+    return {
+      fontSize: this.hostConfig.fontSizes?.large,
+      color: this.getColor(),
+      fontFamily: this.getFontFamily(),
+      textAlign: this.props.horizontalAlignment,
+    };
+  };
 }

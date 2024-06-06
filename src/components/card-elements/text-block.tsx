@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, TextStyle } from "react-native";
+import { Text, TextStyle, StyleProp } from "react-native";
 import { ITextBlock, TextBlockStyle } from "./text-block.types";
 import { useHostConfig } from "../../hooks/useHostConfig";
 import { BlockElementHeight, Colors, FontSize, FontType, FontWeight, HorizontalAlignment, Spacing } from "../../utils/design-tokens";
@@ -35,11 +35,19 @@ export const TextBlock = (providedProps: ITextBlock) => {
 
   /* ******************** Variables ******************** */
   const styles = new TextBlockStyles(props, hostConfig);
-  const composedStyles: TextStyle = {
+  const baseStyles: TextStyle = {
     fontSize: hostConfig?.fontSizes?.[props.size],
     color: styles.getColor(),
     textAlign: props.horizontalAlignment,
   };
+  const composedStyles: StyleProp<TextStyle> = [baseStyles];
+  
+  if (props.style === TextBlockStyle.Heading) {
+    if (!providedProps.weight) {
+      props.weight = FontWeight.Bolder;
+    }
+    composedStyles.push(styles.getHeadingStyle());
+  }
 
   /* ******************** Functions ******************** */
   /* ******************** Effects ******************** */
