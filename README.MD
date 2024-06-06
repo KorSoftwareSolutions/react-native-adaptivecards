@@ -42,6 +42,15 @@
   - [x] Wrap
   - [x] Style
 - [ ] Image
+  - [ ] url
+  - [ ] altText
+  - [ ] backgroundColor
+  - [ ] height
+  - [ ] horizontalAlignment
+  - [ ] selectAction
+  - [ ] size
+  - [ ] style
+  - [ ] width
 - [ ] Media
 - [ ] MediaSource
 - [ ] CaptionSource

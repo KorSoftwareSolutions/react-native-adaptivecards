@@ -40,9 +40,17 @@
   - [x] Size
   - [x] Weight
   - [x] Wrap
-  - [ ] Style
-  - [ ] Custom styles
+  - [x] Style
 - [ ] Image
+  - [ ] url
+  - [ ] altText
+  - [ ] backgroundColor
+  - [ ] height
+  - [ ] horizontalAlignment
+  - [ ] selectAction
+  - [ ] size
+  - [ ] style
+  - [ ] width
 - [ ] Media
 - [ ] MediaSource
 - [ ] CaptionSource

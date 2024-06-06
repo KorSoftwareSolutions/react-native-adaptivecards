@@ -1,0 +1,44 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.6",
+  "body": [
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "style: default",
+              "weight": "bolder"
+            },
+            {
+              "type": "Image",
+              "url": "https://adaptivecards.io/content/cats/1.png",
+              "altText": "Person",
+              "style": "default"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "style: person",
+              "weight": "bolder"
+            },
+            {
+              "type": "Image",
+              "url": "https://adaptivecards.io/content/cats/1.png",
+              "altText": "Person",
+              "style": "person"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

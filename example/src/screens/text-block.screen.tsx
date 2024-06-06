@@ -1,8 +1,7 @@
-import { AdaptiveCard } from "adaptivecards-rn";
 import React from "react";
-import { ScrollView, StyleSheet } from "react-native";
 import { TextBlockSamples } from "../../samples/text-block";
 import { AdaptiveCardDemo } from "../components/adaptive-card-demo";
+import { ScreenContainer } from "../components/screen-container";
 
 export const TextBlockScreen = () => {
   /* ******************** Hooks ******************** */
@@ -11,7 +10,7 @@ export const TextBlockScreen = () => {
   /* ******************** Effects ******************** */
   /* ******************** JSX ******************** */
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+    <ScreenContainer>
       <AdaptiveCardDemo title="General" payload={TextBlockSamples.main} />
       <AdaptiveCardDemo title="Markdown" payload={TextBlockSamples.markdown} />
       <AdaptiveCardDemo title="Colors" payload={TextBlockSamples.colors} />
@@ -23,16 +22,6 @@ export const TextBlockScreen = () => {
       <AdaptiveCardDemo title="Style" payload={TextBlockSamples.style} />
       <AdaptiveCardDemo title="Weight" payload={TextBlockSamples.weight} />
       <AdaptiveCardDemo title="Wrap" payload={TextBlockSamples.wrap} />
-    </ScrollView>
+    </ScreenContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "lightgray",
-  },
-  content: {
-    padding: 10,
-    rowGap: 10,
-  },
-});

@@ -29,7 +29,7 @@ export const HomeScreen = () => {
     <ScrollView contentContainerStyle={styles.content} style={styles.container}>
       <MenuItem text="Adaptive Card" onPress={() => navigate("AdaptiveCard")} />
       <MenuItem text="TextBlock" onPress={() => navigate("TextBlock")} />
-      <MenuItem text="Image" onPress={() => {}} />
+      <MenuItem text="Image" onPress={() => navigate("Image")} />
     </ScrollView>
   );
 };

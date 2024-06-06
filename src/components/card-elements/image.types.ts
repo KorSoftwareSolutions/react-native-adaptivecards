@@ -7,12 +7,12 @@ export interface IImage extends Omit<ICardElement, "height"> {
   url: string;
   altText?: string;
   backgroundColor?: string;
-  height?: string | BlockElementHeight;
+  height?: number | string | BlockElementHeight;
   horizontalAlignment?: HorizontalAlignment;
   selectAction?: ISelectAction;
   size?: ImageSize;
   style?: ImageStyle;
-  width?: string;
+  width?: number | string;
 }
 
 export enum ImageStyle {
