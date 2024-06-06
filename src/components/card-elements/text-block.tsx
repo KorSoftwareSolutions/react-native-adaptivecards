@@ -4,7 +4,7 @@ import { ITextBlock, TextBlockStyle } from "./text-block.types";
 import { useHostConfig } from "../../hooks/useHostConfig";
 import { BlockElementHeight, Colors, FontSize, FontType, FontWeight, HorizontalAlignment, Spacing } from "../../utils/design-tokens";
 import { useMarkdownFormatter } from "../../hooks/useMarkdownFormatter";
-import { textBlockUtils } from "./text-block.utils";
+import { TextBlockStyles } from "./text-block.styles";
 
 const DEFAULT_PROPS: Required<ITextBlock> = {
   type: "TextBlock",
@@ -34,12 +34,13 @@ export const TextBlock = (providedProps: ITextBlock) => {
   const { markdownFormatter } = useMarkdownFormatter(props.fontType);
 
   /* ******************** Variables ******************** */
+  const styles = new TextBlockStyles(props, hostConfig);
   const composedStyles: TextStyle = {
     fontSize: hostConfig?.fontSizes?.[props.size],
-    color: hostConfig?.containerStyles?.default?.foregroundColors?.[props.color].default,
-    fontFamily: textBlockUtils.getFontFamily(props.fontType, hostConfig),
+    color: styles.getColor(),
+    fontFamily: styles.getFontFamily(),
     textAlign: props.horizontalAlignment,
-    fontWeight: textBlockUtils.getFontWeight(props.weight),
+    fontWeight: styles.getFontWeight(),
   };
 
   /* ******************** Functions ******************** */

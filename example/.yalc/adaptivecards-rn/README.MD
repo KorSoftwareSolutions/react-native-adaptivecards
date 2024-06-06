@@ -34,7 +34,7 @@
     - [x] Hyperlinks
   - [x] Color
   - [x] Font Type
-  - [ ] Horizontal Alignment
+  - [x] Horizontal Alignment
   - [ ] Is Subtle
   - [ ] Max Lines
   - [ ] Size
