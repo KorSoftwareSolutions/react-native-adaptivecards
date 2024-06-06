@@ -1,6 +1,6 @@
 import { FontType, FontWeight } from "../../utils/design-tokens";
 import { IHostConfig } from "../../utils/host-config-models";
-import { TextStyle } from "react-native";
+import { TextStyle, TextProps } from "react-native";
 import { ITextBlock } from "./text-block.types";
 
 export class TextBlockStyles {
@@ -35,5 +35,12 @@ export class TextBlockStyles {
     return this.props.isSubtle
       ? this.hostConfig.containerStyles?.default?.foregroundColors?.[this.props.color].subtle
       : this.hostConfig.containerStyles?.default?.foregroundColors?.[this.props.color].default;
+  };
+
+  getNumberOfLines = (): TextProps["numberOfLines"] => {
+    if (this.props.wrap) {
+      return this.props.maxLines;
+    }
+    return 1;
   };
 }

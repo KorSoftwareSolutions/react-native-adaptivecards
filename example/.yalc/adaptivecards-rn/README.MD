@@ -38,7 +38,7 @@
   - [x] Is Subtle
   - [x] Max Lines
   - [x] Size
-  - [ ] Weight
+  - [x] Weight
   - [ ] Wrap
   - [ ] Style
   - [ ] Custom styles

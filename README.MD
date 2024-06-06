@@ -39,7 +39,7 @@
   - [x] Max Lines
   - [x] Size
   - [x] Weight
-  - [ ] Wrap
+  - [x] Wrap
   - [ ] Style
   - [ ] Custom styles
 - [ ] Image

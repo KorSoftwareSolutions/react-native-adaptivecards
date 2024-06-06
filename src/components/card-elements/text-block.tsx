@@ -45,7 +45,7 @@ export const TextBlock = (providedProps: ITextBlock) => {
   /* ******************** Effects ******************** */
   /* ******************** JSX ******************** */
   return (
-    <Text numberOfLines={props.maxLines} style={composedStyles}>
+    <Text numberOfLines={styles.getNumberOfLines()} style={composedStyles}>
       {markdownFormatter(props.text)}
     </Text>
   );
