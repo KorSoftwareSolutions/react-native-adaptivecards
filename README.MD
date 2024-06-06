@@ -36,7 +36,7 @@
   - [x] Font Type
   - [x] Horizontal Alignment
   - [x] Is Subtle
-  - [ ] Max Lines
+  - [x] Max Lines
   - [ ] Size
   - [ ] Weight
   - [ ] Wrap
