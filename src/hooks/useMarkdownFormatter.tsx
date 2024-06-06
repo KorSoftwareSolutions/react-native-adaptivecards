@@ -1,7 +1,9 @@
 import React from "react";
 import { Text } from "react-native";
 import { useHostConfig } from "./useHostConfig";
-import { FontType } from "../utils/design-tokens";
+import { FontWeight } from "../utils/design-tokens";
+import { ITextBlock } from "../components/card-elements/text-block.types";
+import { TextBlockStyles } from "../components/card-elements/text-block.styles";
 
 interface IRule {
   name: string;
@@ -20,17 +22,31 @@ const RULES: IRule[] = [
   { name: "list", pattern: /\n\d\)(.*?)/g },
 ];
 
-export const useMarkdownFormatter = (fontType: FontType) => {
+export const useMarkdownFormatter = (textBlockProps: Required<ITextBlock>) => {
   const { hostConfig } = useHostConfig();
 
-  const fontFamily = hostConfig?.fontFamily?.[fontType];
-
   const ComponentMap: Record<string, React.FC<React.PropsWithChildren>> = {
-    italic: (props) => <Text style={{ fontFamily: fontFamily?.italic }}>{props.children}</Text>,
-    bold: (props) => <Text style={{ fontWeight: "bold", fontFamily: fontFamily?.bold }}>{props.children}</Text>,
-    text: (props) => <Text style={{ fontFamily: fontFamily?.regular }}>{props.children}</Text>,
-    link: (props) => <Text style={{ color: "blue", fontFamily: fontFamily?.regular }}>{props.children}</Text>,
-    list: (props) => <Text style={{ fontFamily: fontFamily?.regular }}>{props.children}</Text>,
+    italic: (props) => {
+      const textBlockStyles = new TextBlockStyles(textBlockProps, hostConfig);
+      return <Text style={{ fontFamily: textBlockStyles.getFontFamily(true) }}>{props.children}</Text>;
+    },
+    bold: (props) => {
+      const textBlockPropsTemp = { ...textBlockProps, weight: FontWeight.Bolder };
+      const textBlockStyles = new TextBlockStyles(textBlockPropsTemp, hostConfig);
+      return <Text style={{ fontFamily: textBlockStyles.getFontFamily() }}>{props.children}</Text>;
+    },
+    text: (props) => {
+      const textBlockStyles = new TextBlockStyles(textBlockProps, hostConfig);
+      return <Text style={{ fontFamily: textBlockStyles.getFontFamily() }}>{props.children}</Text>;
+    },
+    link: (props) => {
+      const textBlockStyles = new TextBlockStyles(textBlockProps, hostConfig);
+      return <Text style={{ color: "blue", fontFamily: textBlockStyles.getFontFamily() }}>{props.children}</Text>;
+    },
+    list: (props) => {
+      const textBlockStyles = new TextBlockStyles(textBlockProps, hostConfig);
+      return <Text style={{ fontFamily: textBlockStyles.getFontFamily() }}>{props.children}</Text>;
+    },
   };
 
   const markdownFormatter = (markdown?: string): JSX.Element[] => {

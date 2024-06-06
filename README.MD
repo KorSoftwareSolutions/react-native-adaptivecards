@@ -37,8 +37,8 @@
   - [x] Horizontal Alignment
   - [x] Is Subtle
   - [x] Max Lines
-  - [ ] Size
-  - [ ] Weight
+  - [x] Size
+  - [x] Weight
   - [ ] Wrap
   - [ ] Style
   - [ ] Custom styles

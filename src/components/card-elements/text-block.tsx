@@ -31,20 +31,22 @@ export const TextBlock = (providedProps: ITextBlock) => {
   const props = { ...DEFAULT_PROPS, ...providedProps };
   /* ******************** Hooks ******************** */
   const { hostConfig } = useHostConfig();
-  const { markdownFormatter } = useMarkdownFormatter(props.fontType);
+  const { markdownFormatter } = useMarkdownFormatter(props);
 
   /* ******************** Variables ******************** */
   const styles = new TextBlockStyles(props, hostConfig);
   const composedStyles: TextStyle = {
     fontSize: hostConfig?.fontSizes?.[props.size],
     color: styles.getColor(),
-    fontFamily: styles.getFontFamily(),
     textAlign: props.horizontalAlignment,
-    fontWeight: styles.getFontWeight(),
   };
 
   /* ******************** Functions ******************** */
   /* ******************** Effects ******************** */
   /* ******************** JSX ******************** */
-  return <Text numberOfLines={props.maxLines} style={composedStyles}>{markdownFormatter(props.text)}</Text>;
+  return (
+    <Text numberOfLines={props.maxLines} style={composedStyles}>
+      {markdownFormatter(props.text)}
+    </Text>
+  );
 };

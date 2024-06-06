@@ -17,6 +17,57 @@
       "type": "TextBlock",
       "text": "weight: bolder",
       "weight": "bolder"
+    },
+    {
+      "type": "TextBlock",
+      "text": "_weight: lighter; italic_",
+      "weight": "lighter"
+    },
+    {
+      "type": "TextBlock",
+      "text": "_weight: default; italic_",
+      "weight": "default"
+    },
+    {
+      "type": "TextBlock",
+      "text": "_weight: bolder; italic_",
+      "weight": "bolder"
+    },
+    {
+      "type": "TextBlock",
+      "text": "weight: lighter; monospace",
+      "weight": "lighter",
+      "fontType": "monospace"
+    },
+    {
+      "type": "TextBlock",
+      "text": "weight: default; monospace",
+      "weight": "default",
+      "fontType": "monospace"
+    },
+    {
+      "type": "TextBlock",
+      "text": "weight: bolder; monospace",
+      "weight": "bolder",
+      "fontType": "monospace"
+    },
+    {
+      "type": "TextBlock",
+      "text": "_weight: lighter; monospace; italic_",
+      "weight": "lighter",
+      "fontType": "monospace"
+    },
+    {
+      "type": "TextBlock",
+      "text": "_weight: default; monospace; italic_",
+      "weight": "default",
+      "fontType": "monospace"
+    },
+    {
+      "type": "TextBlock",
+      "text": "_weight: bolder; monospace; italic_",
+      "weight": "bolder",
+      "fontType": "monospace"
     }
   ]
 }

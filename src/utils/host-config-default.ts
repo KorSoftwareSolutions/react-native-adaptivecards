@@ -36,22 +36,8 @@ export const defaultHostConfig: IHostConfig = {
   allowCustomStyle: true,
   supportsInteractivity: true,
   fontFamily: {
-    default: {
-      light: "Arial",
-      regular: "Arial",
-      bold: "Arial Bold",
-      italicLight: "Arial",
-      italic: "Arial Italic",
-      italicBold: "Arial",
-    },
-    monospace: {
-      light: "Courier New",
-      regular: "Courier New",
-      bold: "Courier New",
-      italicLight: "Courier New",
-      italic: "Courier New",
-      italicBold: "Courier New",
-    },
+    default: {},
+    monospace: {},
   },
   actions: {
     actionsOrientation: "horizontal",

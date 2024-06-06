@@ -6,23 +6,29 @@ import { ITextBlock } from "./text-block.types";
 export class TextBlockStyles {
   constructor(public props: Required<ITextBlock>, public hostConfig: IHostConfig) {}
 
-  getFontFamily = (): TextStyle["fontFamily"] => {
+  getFontFamily = (italic?: boolean): TextStyle["fontFamily"] => {
     if (this.props.fontType === FontType.Monospace) {
+      if (this.props.weight === FontWeight.Lighter) {
+        if (italic) return this.hostConfig.fontFamily?.monospace?.italicLight;
+        return this.hostConfig.fontFamily?.monospace?.light;
+      }
+      if (this.props.weight === FontWeight.Bolder) {
+        if (italic) return this.hostConfig.fontFamily?.monospace?.italicBold;
+        return this.hostConfig.fontFamily?.monospace?.bold;
+      }
+      if (italic) return this.hostConfig.fontFamily?.monospace?.italic;
       return this.hostConfig.fontFamily?.monospace?.regular;
     }
-    return this.hostConfig.fontFamily?.default?.regular;
-  };
-
-  getFontWeight = (): TextStyle["fontWeight"] => {
-    switch (this.props.weight) {
-      case FontWeight.Lighter:
-        return "light";
-      case FontWeight.Bolder:
-        return "bold";
-      case FontWeight.Default:
-      default:
-        return "regular";
+    if (this.props.weight === FontWeight.Lighter) {
+      if (italic) return this.hostConfig.fontFamily?.default?.italicLight;
+      return this.hostConfig.fontFamily?.default?.light;
     }
+    if (this.props.weight === FontWeight.Bolder) {
+      if (italic) return this.hostConfig.fontFamily?.default?.italicBold;
+      return this.hostConfig.fontFamily?.default?.bold;
+    }
+    if (italic) return this.hostConfig.fontFamily?.default?.italic;
+    return this.hostConfig.fontFamily?.default?.regular;
   };
 
   getColor = (): TextStyle["color"] => {
