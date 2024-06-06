@@ -4,7 +4,7 @@ import { IAdaptiveCard } from "./adaptive-card.types";
 import { semverUtils } from "../../utils/semver-utils";
 import { elementFactory } from "../../element-factory";
 import { CardElement } from "../card-elements/card-element";
-import { IHostConfig } from "../../utils/host-config";
+import { IHostConfig } from "../../utils/host-config-models";
 import { AdaptiveCardProvider } from "../../hooks/useHostConfig";
 import { AdaptiveCardContainer } from "./adaptive-card-container";
 

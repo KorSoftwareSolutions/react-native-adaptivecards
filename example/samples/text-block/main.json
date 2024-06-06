@@ -16,6 +16,7 @@
     {
       "type": "TextBlock",
       "text": "So set **wrap** to true if you plan on showing a paragraph of text",
+      "weight": "lighter",
       "wrap": true
     },
     {

@@ -1,6 +1,7 @@
 import React from "react";
 import { Text } from "react-native";
 import { useHostConfig } from "./useHostConfig";
+import { FontType } from "../utils/design-tokens";
 
 interface IRule {
   name: string;
@@ -19,18 +20,17 @@ const RULES: IRule[] = [
   { name: "list", pattern: /\n\d\)(.*?)/g },
 ];
 
-export const useMarkdownFormatter = () => {
+export const useMarkdownFormatter = (fontType: FontType) => {
   const { hostConfig } = useHostConfig();
 
-  const italicFontFamily = hostConfig?.fontFamily?.default?.italic;
-  const regularFontFamily = hostConfig?.fontFamily?.default?.regular;
+  const fontFamily = hostConfig?.fontFamily?.[fontType];
 
   const ComponentMap: Record<string, React.FC<React.PropsWithChildren>> = {
-    italic: (props) => <Text style={{ fontFamily: italicFontFamily }}>{props.children}</Text>,
-    bold: (props) => <Text style={{ fontWeight: "bold", fontFamily: regularFontFamily }}>{props.children}</Text>,
-    text: (props) => <Text style={{ fontFamily: regularFontFamily }}>{props.children}</Text>,
-    link: (props) => <Text style={{ color: "blue", fontFamily: regularFontFamily }}>{props.children}</Text>,
-    list: (props) => <Text style={{ fontFamily: regularFontFamily }}>{props.children}</Text>,
+    italic: (props) => <Text style={{ fontFamily: fontFamily?.italic }}>{props.children}</Text>,
+    bold: (props) => <Text style={{ fontWeight: "bold", fontFamily: fontFamily?.bold }}>{props.children}</Text>,
+    text: (props) => <Text style={{ fontFamily: fontFamily?.regular }}>{props.children}</Text>,
+    link: (props) => <Text style={{ color: "blue", fontFamily: fontFamily?.regular }}>{props.children}</Text>,
+    list: (props) => <Text style={{ fontFamily: fontFamily?.regular }}>{props.children}</Text>,
   };
 
   const markdownFormatter = (markdown?: string): JSX.Element[] => {

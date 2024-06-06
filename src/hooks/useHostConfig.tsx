@@ -1,5 +1,6 @@
 import React from "react";
-import { IHostConfig, defaultHostConfig } from "../utils/host-config";
+import { IHostConfig } from "../utils/host-config-models";
+import { defaultHostConfig } from "../utils/host-config-default";
 
 interface IAdaptiveCardContext {
   hostConfig: IHostConfig;
