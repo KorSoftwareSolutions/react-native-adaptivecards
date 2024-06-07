@@ -42,8 +42,8 @@
   - [x] Wrap
   - [x] Style
 - [ ] Image
-  - [ ] url
-  - [ ] altText
+  - [x] url
+  - [x] altText
   - [ ] backgroundColor
   - [ ] height
   - [ ] horizontalAlignment

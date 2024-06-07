@@ -1,7 +1,7 @@
 import { BlockElementHeight, HorizontalAlignment, ImageSize } from "../../utils/design-tokens";
 import { ISelectAction } from "../cards/adaptive-card.types";
 import { ICardElement } from "./card-element.types";
-
+import { DimensionValue } from "react-native";
 export interface IImage extends Omit<ICardElement, "height"> {
   type: "Image";
   url: string;
@@ -12,7 +12,7 @@ export interface IImage extends Omit<ICardElement, "height"> {
   selectAction?: ISelectAction;
   size?: ImageSize;
   style?: ImageStyle;
-  width?: number | string;
+  width?: DimensionValue;
 }
 
 export enum ImageStyle {

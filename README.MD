@@ -42,10 +42,10 @@
   - [x] Wrap
   - [x] Style
 - [ ] Image
-  - [ ] url
-  - [ ] altText
-  - [ ] backgroundColor
-  - [ ] height
+  - [x] url
+  - [x] altText
+  - [x] backgroundColor
+  - [-] height
   - [ ] horizontalAlignment
   - [ ] selectAction
   - [ ] size

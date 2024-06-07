@@ -6,7 +6,7 @@ import { ITextBlock } from "./text-block.types";
 export class TextBlockStyles {
   constructor(public props: Required<ITextBlock>, public hostConfig: IHostConfig) {}
 
-  getFontFamily = (italic?: boolean): TextStyle["fontFamily"] => {
+  getFontFamily(italic?: boolean): TextStyle["fontFamily"] {
     if (this.props.fontType === FontType.Monospace) {
       if (this.props.weight === FontWeight.Lighter) {
         if (italic) return this.hostConfig.fontFamily?.monospace?.italicLight;
@@ -29,27 +29,27 @@ export class TextBlockStyles {
     }
     if (italic) return this.hostConfig.fontFamily?.default?.italic;
     return this.hostConfig.fontFamily?.default?.regular;
-  };
+  }
 
-  getColor = (): TextStyle["color"] => {
+  getColor(): TextStyle["color"] {
     return this.props.isSubtle
       ? this.hostConfig.containerStyles?.default?.foregroundColors?.[this.props.color].subtle
       : this.hostConfig.containerStyles?.default?.foregroundColors?.[this.props.color].default;
-  };
+  }
 
-  getNumberOfLines = (): TextProps["numberOfLines"] => {
+  getNumberOfLines(): TextProps["numberOfLines"] {
     if (this.props.wrap) {
       return this.props.maxLines;
     }
     return 1;
-  };
+  }
 
-  getHeadingStyle = (): TextStyle => {
+  getHeadingStyle(): TextStyle {
     return {
       fontSize: this.hostConfig.fontSizes?.large,
       color: this.getColor(),
       fontFamily: this.getFontFamily(),
       textAlign: this.props.horizontalAlignment,
     };
-  };
+  }
 }

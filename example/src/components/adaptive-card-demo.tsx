@@ -5,6 +5,7 @@ import { View, Text, StyleSheet } from "react-native";
 interface IProps {
   title: string;
   payload: any;
+  maxHeight?: number;
 }
 
 export const AdaptiveCardDemo = (props: IProps) => {
@@ -34,7 +35,7 @@ export const AdaptiveCardDemo = (props: IProps) => {
   /* ******************** Effects ******************** */
   /* ******************** JSX ******************** */
   return (
-    <View style={styles.container}>
+    <View style={{ ...styles.container, maxHeight: props.maxHeight }}>
       <Text style={styles.title}>{props.title}</Text>
       <AdaptiveCard payload={props.payload} hostConfig={hostConfig} />
     </View>
