@@ -47,7 +47,7 @@
   - [x] backgroundColor
   - [x] height
   - [x] horizontalAlignment
-  - [-] selectAction
+  - [ ] selectAction
   - [ ] size
   - [ ] style
   - [ ] width

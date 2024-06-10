@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Image as RNImage, StyleProp, ImageStyle as RNImageStyle, View, LayoutChangeEvent } from "react-native";
+import { Image as RNImage, StyleProp, ImageStyle as RNImageStyle, LayoutChangeEvent, TouchableOpacity, Alert } from "react-native";
 import { IImage, ImageStyle } from "./image.types";
 import { BlockElementHeight, HorizontalAlignment, ImageSize, Spacing } from "../../utils/design-tokens";
 import { ImageStyles } from "./image.styles";
@@ -51,6 +51,13 @@ export const Image = (providedProps: IImage) => {
   const onParentLayout = (e: LayoutChangeEvent) => {
     parentSize.current = { width: e.nativeEvent.layout.width, height: e.nativeEvent.layout.height };
   };
+
+  const onPress = () => {
+    if (props.selectAction) {
+      Alert.alert("Image pressed", `${JSON.stringify(props.selectAction)}`);
+    }
+  };
+
   /* ******************** Effects ******************** */
   useEffect(() => {
     if (!shouldCalculateActualImageSize) return;
@@ -61,8 +68,8 @@ export const Image = (providedProps: IImage) => {
 
   /* ******************** JSX ******************** */
   return (
-    <View onLayout={onParentLayout}>
+    <TouchableOpacity onPress={onPress} onLayout={onParentLayout} disabled={!props.selectAction}>
       <RNImage source={{ uri: props.url }} alt={props.altText} style={composedStyles} />
-    </View>
+    </TouchableOpacity>
   );
 };
