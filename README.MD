@@ -45,7 +45,7 @@
   - [x] url
   - [x] altText
   - [x] backgroundColor
-  - [-] height
+  - [x] height
   - [ ] horizontalAlignment
   - [ ] selectAction
   - [ ] size

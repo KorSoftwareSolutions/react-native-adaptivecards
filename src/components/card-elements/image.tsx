@@ -43,8 +43,6 @@ export const Image = (providedProps: IImage) => {
     resizeMode: styles.getResizeMode(),
   };
 
-  console.log(baseStyles)
-
   const composedStyles: StyleProp<RNImageStyle> = [baseStyles];
 
   /* ******************** Functions ******************** */
