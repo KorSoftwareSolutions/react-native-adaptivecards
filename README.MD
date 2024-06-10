@@ -46,7 +46,7 @@
   - [x] altText
   - [x] backgroundColor
   - [x] height
-  - [ ] horizontalAlignment
+  - [x] horizontalAlignment
   - [ ] selectAction
   - [ ] size
   - [ ] style

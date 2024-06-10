@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Image as RNImage, StyleProp, ImageStyle as RNImageStyle } from "react-native";
+import React, { useEffect, useRef } from "react";
+import { Image as RNImage, StyleProp, ImageStyle as RNImageStyle, View, LayoutChangeEvent } from "react-native";
 import { IImage, ImageStyle } from "./image.types";
 import { BlockElementHeight, HorizontalAlignment, ImageSize, Spacing } from "../../utils/design-tokens";
 import { ImageStyles } from "./image.styles";
@@ -30,22 +30,27 @@ export const Image = (providedProps: IImage) => {
   /* ******************** Hooks ******************** */
   const { hostConfig } = useHostConfig();
   const [actualImageSize, setActualImageSize] = React.useState<{ width: number; height: number } | null>(null);
+  const parentSize = useRef<{ width: number; height: number } | null>(null);
+  const styles = new ImageStyles(props, hostConfig);
 
   /* ******************** Variables ******************** */
+  const maxWidth = styles.getMaxWidth(parentSize.current?.width, actualImageSize?.width);
   const shouldCalculateActualImageSize = props.size === ImageSize.Auto || props.height === BlockElementHeight.Auto;
-
-  const styles = new ImageStyles(props, hostConfig);
 
   const baseStyles: StyleProp<RNImageStyle> = {
     backgroundColor: props.backgroundColor,
     height: styles.getHeight(actualImageSize?.height),
-    width: actualImageSize?.width ?? props.width,
+    width: styles.getWidth(maxWidth),
     resizeMode: styles.getResizeMode(),
+    alignSelf: styles.getAlignSelf(),
   };
 
   const composedStyles: StyleProp<RNImageStyle> = [baseStyles];
 
   /* ******************** Functions ******************** */
+  const onParentLayout = (e: LayoutChangeEvent) => {
+    parentSize.current = { width: e.nativeEvent.layout.width, height: e.nativeEvent.layout.height };
+  };
   /* ******************** Effects ******************** */
   useEffect(() => {
     if (!shouldCalculateActualImageSize) return;
@@ -55,5 +60,9 @@ export const Image = (providedProps: IImage) => {
   }, []);
 
   /* ******************** JSX ******************** */
-  return <RNImage source={{ uri: props.url }} alt={props.altText} style={composedStyles} />;
+  return (
+    <View onLayout={onParentLayout}>
+      <RNImage source={{ uri: props.url }} alt={props.altText} style={composedStyles} />
+    </View>
+  );
 };

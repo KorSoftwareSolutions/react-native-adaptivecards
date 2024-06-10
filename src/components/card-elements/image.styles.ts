@@ -1,4 +1,4 @@
-import { BlockElementHeight, ImageSize } from "../../utils/design-tokens";
+import { BlockElementHeight, HorizontalAlignment, ImageSize } from "../../utils/design-tokens";
 import { IHostConfig } from "../../utils/host-config-models";
 import { IImage } from "./image.types";
 import { ImageStyle as RNImageStyle } from "react-native";
@@ -32,8 +32,39 @@ export class ImageStyles {
     return this.hostConfig.imageSizes?.[this.imageProps.size];
   }
 
+  getWidth(maxWidth?: number): RNImageStyle["width"] {
+    if (this.imageProps.width === "auto") return maxWidth;
+    else if (typeof this.imageProps.width === "string") {
+      if (this.imageProps.width.endsWith("px")) return parseInt(this.imageProps.width);
+      return this.imageProps.width as `${number}%`;
+    } else if (typeof this.imageProps.width === "number") {
+      return this.imageProps.width;
+    } else {
+      return this.getWidthFromSize(maxWidth);
+    }
+  }
+
+  private getWidthFromSize(maxWidth?: number): number | undefined {
+    if (!this.imageProps.size) return;
+    else if (this.imageProps.size === ImageSize.Auto) return maxWidth;
+    else if (this.imageProps.size === ImageSize.Stretch) return maxWidth;
+    return this.hostConfig.imageSizes?.[this.imageProps.size];
+  }
+
   getResizeMode(): RNImageStyle["resizeMode"] {
     if (this.imageProps.width === "auto" || this.imageProps.size === ImageSize.Stretch) return "stretch";
     return "contain";
+  }
+
+  getAlignSelf(): RNImageStyle["alignSelf"] {
+    if (this.imageProps.horizontalAlignment === HorizontalAlignment.Center) return "center";
+    if (this.imageProps.horizontalAlignment === HorizontalAlignment.Right) return "flex-end";
+    return "flex-start";
+  }
+
+  getMaxWidth(parentWidth?: number, imageWidth?: number): number | undefined {
+    if (parentWidth === undefined) return;
+    if (imageWidth === undefined) return parentWidth;
+    return Math.min(parentWidth, imageWidth);
   }
 }

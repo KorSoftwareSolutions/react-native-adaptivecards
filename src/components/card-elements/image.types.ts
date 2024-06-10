@@ -12,7 +12,7 @@ export interface IImage extends Omit<ICardElement, "height"> {
   selectAction?: ISelectAction;
   size?: ImageSize;
   style?: ImageStyle;
-  width?: DimensionValue;
+  width?: number | string;
 }
 
 export enum ImageStyle {
