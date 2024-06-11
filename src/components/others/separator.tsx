@@ -2,23 +2,16 @@ import React from "react";
 import { View, StyleProp, ViewStyle } from "react-native";
 import { useHostConfig } from "../../hooks/useHostConfig";
 
-export interface IProps {
-  hideLine?: boolean;
-}
-
-export const Separator = (props: IProps) => {
+export const Separator = () => {
   /* ******************** Hooks ******************** */
   const { hostConfig } = useHostConfig();
 
   /* ******************** Variables ******************** */
   const styles: StyleProp<ViewStyle> = {
     height: hostConfig.separator?.lineThickness,
-    marginVertical: hostConfig.separator?.spacing,
+    backgroundColor: hostConfig?.separator?.lineColor,
+    marginTop: hostConfig?.spacing?.default,
   };
-
-  if (!props.hideLine) {
-    styles.backgroundColor = hostConfig?.separator?.lineColor;
-  }
 
   /* ******************** Functions ******************** */
   /* ******************** Effects ******************** */

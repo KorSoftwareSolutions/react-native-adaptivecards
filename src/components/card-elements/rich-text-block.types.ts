@@ -2,10 +2,13 @@ import { Colors, FontSize, FontType, FontWeight, HorizontalAlignment } from "../
 import { ISelectAction } from "../cards/adaptive-card.types";
 import { ICardElement } from "./card-element.types";
 
-export interface IRichTextBlock extends ICardElement {
-  type: "RichTextBlock";
+export interface IRichTextBlockProps {
   inlines?: IRichTextBlockInline[];
   horizontalAlignment?: HorizontalAlignment;
+}
+
+export interface IRichTextBlock extends ICardElement, IRichTextBlockProps {
+  type: "RichTextBlock";
 }
 
 export type IRichTextBlockInline = ITextRun | string;

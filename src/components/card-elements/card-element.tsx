@@ -1,7 +1,10 @@
 import React, { useMemo } from "react";
 import { ICardElement } from "./card-element.types";
-import { elementFactory } from "../../element-factory";
 import { Separator } from "../others/separator";
+import { elementFactory } from "../../utils/element-factory";
+import { View, StyleProp, ViewStyle } from "react-native";
+import { useHostConfig } from "../../hooks/useHostConfig";
+import { CardElementStyles } from "./card-element.styles";
 
 const DEFAULT_PROPS: ICardElement = {
   isVisible: true,
@@ -10,6 +13,9 @@ const DEFAULT_PROPS: ICardElement = {
 export const CardElement = (providedProps: React.PropsWithChildren<ICardElement>) => {
   const props = { ...DEFAULT_PROPS, ...providedProps };
   /* ******************** Hooks ******************** */
+  const { hostConfig } = useHostConfig();
+  const styles = new CardElementStyles(props, hostConfig);
+
   /* ******************** Variables ******************** */
   const FallbackElement = useMemo(() => {
     if (!props.fallback || props.fallback === "drop") {
@@ -21,6 +27,10 @@ export const CardElement = (providedProps: React.PropsWithChildren<ICardElement>
 
   const isInvalid = false;
 
+  const spacerStyles: StyleProp<ViewStyle> = {
+    height: styles.getSpacing(props.spacing),
+  };
+
   /* ******************** Functions ******************** */
   /* ******************** Effects ******************** */
   /* ******************** JSX ******************** */
@@ -31,8 +41,8 @@ export const CardElement = (providedProps: React.PropsWithChildren<ICardElement>
   return (
     <>
       {props.separator && <Separator />}
+      <View style={spacerStyles} />
       {props.children}
-      {props.separator && <Separator hideLine />}
     </>
   );
 };

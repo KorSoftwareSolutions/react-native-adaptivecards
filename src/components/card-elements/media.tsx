@@ -5,6 +5,7 @@ import { TextBlock } from "./text-block";
 import { StyleSheet, Image, TouchableOpacity, StyleProp, ImageStyle, ImageBackground, ViewStyle } from "react-native";
 import { Colors } from "../../utils/design-tokens";
 import { imageUtils } from "../../utils/image.utils";
+import { useHostConfig } from "../../hooks/useHostConfig";
 
 const DEFAULT_PROPS: Required<IMediaProps> = {
   altText: "",
@@ -54,6 +55,7 @@ const generateBodyHtml = (children: string) => `
 export const Media = (providedProps: IMedia) => {
   const props = { ...DEFAULT_PROPS, ...providedProps };
   /* ******************** Hooks ******************** */
+  const { hostConfig } = useHostConfig();
   const [isPlaying, setIsPlaying] = useState(false);
   const [posterImageSize, setPosterImageSize] = useState<{ width: number; height: number } | null>(null);
 
@@ -64,13 +66,16 @@ export const Media = (providedProps: IMedia) => {
   const posterStyles: StyleProp<ImageStyle> = {
     minHeight: 75,
     aspectRatio: posterImageAspectRatio,
+    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    maxWidth: "100%",
   };
 
   const audioContainerStyles: StyleProp<ViewStyle> = {
     height: 36,
   };
+
   const videoContainerStyles: StyleProp<ViewStyle> = {
     aspectRatio: posterImageAspectRatio,
   };

@@ -57,7 +57,20 @@
   - [x] altText
   - [x] captionSources
 - [ ] RichTextBlock
-- [ ] TextRun
+  - [ ] inlines
+  - [ ] horizontalAlignment
+- [x] TextRun
+  - [x] Date time formatting
+  - [x] color
+  - [x] fontType
+  - [x] highlight
+  - [x] isSubtle
+  - [x] italic
+  - [x] selectAction
+  - [x] size
+  - [x] strikethrough
+  - [x] underline
+  - [x] weight
 
 ### Card Element
 

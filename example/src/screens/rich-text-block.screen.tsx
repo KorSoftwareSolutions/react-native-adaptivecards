@@ -1,9 +1,9 @@
 import React from "react";
 import { ScreenContainer } from "../components/screen-container";
 import { AdaptiveCardDemo } from "../components/adaptive-card-demo";
-import { mediaSamples } from "../../samples/media";
+import { richTextBlockSamples } from "../../samples/rich-text-block";
 
-export const MediaScreen = () => {
+export const RichTextBlockScreen = () => {
   /* ******************** Hooks ******************** */
   /* ******************** Variables ******************** */
   /* ******************** Functions ******************** */
@@ -11,8 +11,7 @@ export const MediaScreen = () => {
   /* ******************** JSX ******************** */
   return (
     <ScreenContainer>
-      <AdaptiveCardDemo title="General" payload={mediaSamples.main} />
-      <AdaptiveCardDemo title="Sources" payload={mediaSamples.sources} />
+      <AdaptiveCardDemo title="General" payload={richTextBlockSamples.general} />
     </ScreenContainer>
   );
 };

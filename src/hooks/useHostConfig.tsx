@@ -7,7 +7,7 @@ interface IAdaptiveCardContext {
 }
 
 export interface IAdaptiveCardProviderProps {
-  hostConfig: IHostConfig;
+  hostConfig?: IHostConfig;
 }
 
 const AdaptiveCardContext = React.createContext<IAdaptiveCardContext | undefined>(undefined);

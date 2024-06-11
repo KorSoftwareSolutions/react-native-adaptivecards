@@ -51,13 +51,26 @@
   - [x] size
   - [x] style
   - [x] width
-- [ ] Media
+- [x] Media
   - [x] sources
   - [x] poster
-  - [ ] altText
+  - [x] altText
   - [x] captionSources
 - [ ] RichTextBlock
+  - [ ] inlines
+  - [ ] horizontalAlignment
 - [ ] TextRun
+  - [x] Date time formatting
+  - [x] color
+  - [x] fontType
+  - [x] highlight
+  - [x] isSubtle
+  - [x] italic
+  - [ ] selectAction
+  - [x] size
+  - [x] strikethrough
+  - [x] underline
+  - [x] weight
 
 ### Card Element
 

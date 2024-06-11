@@ -31,6 +31,7 @@ export const AdaptiveCardContainer = (props: React.PropsWithChildren<IAdaptiveCa
     resizeModeProp = "repeat";
   }
   const computedPropsStyle: ImageBackgroundProps["style"] = {};
+
   if (props.minHeight) {
     computedPropsStyle.minHeight = stylesUtils.parsePixels(props.minHeight);
   }

@@ -41,7 +41,7 @@ export const TextBlock = (providedProps: ITextBlock) => {
     textAlign: props.horizontalAlignment,
   };
   const composedStyles: StyleProp<TextStyle> = [baseStyles];
-  
+
   if (props.style === TextBlockStyle.Heading) {
     if (!providedProps.weight) {
       props.weight = FontWeight.Bolder;

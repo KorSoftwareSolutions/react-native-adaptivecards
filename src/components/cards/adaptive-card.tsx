@@ -2,7 +2,7 @@ import React from "react";
 import { Text } from "react-native";
 import { IAdaptiveCard } from "./adaptive-card.types";
 import { semverUtils } from "../../utils/semver-utils";
-import { elementFactory } from "../../element-factory";
+import { elementFactory } from "../../utils/element-factory";
 import { CardElement } from "../card-elements/card-element";
 import { IHostConfig } from "../../utils/host-config-models";
 import { AdaptiveCardProvider } from "../../hooks/useHostConfig";

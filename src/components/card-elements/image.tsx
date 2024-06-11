@@ -5,6 +5,7 @@ import { BlockElementHeight, HorizontalAlignment, ImageSize, Spacing } from "../
 import { ImageStyles } from "./image.styles";
 import { useHostConfig } from "../../hooks/useHostConfig";
 import { imageUtils } from "../../utils/image.utils";
+import { stylesUtils } from "../../utils/styles-utils";
 
 const DEFAULT_PROPS: IImage = {
   type: "Image",
