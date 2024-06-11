@@ -51,11 +51,11 @@
   - [x] size
   - [x] style
   - [x] width
-- [ ] Media
-  - [ ] sources
-  - [ ] poster
-  - [ ] altText
-  - [ ] captionSources
+- [x] Media
+  - [x] sources
+  - [x] poster
+  - [x] altText
+  - [x] captionSources
 - [ ] RichTextBlock
 - [ ] TextRun
 

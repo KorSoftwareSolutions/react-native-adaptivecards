@@ -52,10 +52,10 @@
   - [x] style
   - [x] width
 - [ ] Media
-  - [ ] sources
-  - [ ] poster
+  - [x] sources
+  - [x] poster
   - [ ] altText
-  - [ ] captionSources
+  - [x] captionSources
 - [ ] RichTextBlock
 - [ ] TextRun
 

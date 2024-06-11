@@ -1,11 +1,14 @@
 import { ICardElement } from "./card-element.types";
 
-export interface IMedia extends ICardElement {
-  type: "Media";
+export interface IMediaProps {
   sources: IMediaSource[];
   poster?: string;
   altText?: string;
   captionSources?: ICaptionSource[];
+}
+
+export interface IMedia extends ICardElement, IMediaProps {
+  type: "Media";
 }
 
 export interface IMediaSource {

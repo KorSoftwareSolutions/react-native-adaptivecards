@@ -1,11 +1,13 @@
-import React, { useState } from "react";
-import { ICaptionSource, IMedia, IMediaSource } from "./media.types";
+import React, { useState, useEffect } from "react";
+import { ICaptionSource, IMedia, IMediaProps, IMediaSource } from "./media.types";
 import WebView from "react-native-webview";
 import { TextBlock } from "./text-block";
-import { StyleSheet, Image, TouchableOpacity, Dimensions } from "react-native";
+import { StyleSheet, Image, TouchableOpacity, StyleProp, ImageStyle, ImageBackground, ViewStyle } from "react-native";
+import { Colors } from "../../utils/design-tokens";
+import { imageUtils } from "../../utils/image.utils";
 
-const DEFAULT_PROPS: IMedia = {
-  type: "Media",
+const DEFAULT_PROPS: Required<IMediaProps> = {
+  altText: "",
   poster: "https://placehold.co/400",
   sources: [],
   captionSources: [],
@@ -38,58 +40,89 @@ const generateAudioHtml = (sources: IMediaSource[]) => `
   </audio>
 `;
 
+const generateBodyHtml = (children: string) => `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+  <body style="background-color: transparent; padding: 0; margin: 0;">
+    ${children}
+  </body>
+</html>`;
+
 export const Media = (providedProps: IMedia) => {
   const props = { ...DEFAULT_PROPS, ...providedProps };
   /* ******************** Hooks ******************** */
   const [isPlaying, setIsPlaying] = useState(false);
+  const [posterImageSize, setPosterImageSize] = useState<{ width: number; height: number } | null>(null);
 
   /* ******************** Variables ******************** */
-  const hasSources = !!props.sources.length;
-  const mediaType = hasSources ? props.sources[0].mimeType.split("/")[0] : null;
+  const mediaType = props.sources.length ? props.sources[0].mimeType.split("/")[0] : null;
+  const posterImageAspectRatio = !posterImageSize ? 1 : posterImageSize.width / posterImageSize.height;
+
+  const posterStyles: StyleProp<ImageStyle> = {
+    minHeight: 75,
+    aspectRatio: posterImageAspectRatio,
+    justifyContent: "center",
+    alignItems: "center",
+  };
+
+  const audioContainerStyles: StyleProp<ViewStyle> = {
+    height: 36,
+  };
+  const videoContainerStyles: StyleProp<ViewStyle> = {
+    aspectRatio: posterImageAspectRatio,
+  };
+
   /* ******************** Functions ******************** */
   /* ******************** Effects ******************** */
+  useEffect(() => {
+    imageUtils.getSize(props.poster).then((size) => {
+      setPosterImageSize(size);
+    });
+  }, []);
   /* ******************** JSX ******************** */
   if (!isPlaying) {
     return (
-      <TouchableOpacity onPress={() => setIsPlaying(true)} style={styles.container}>
-        <Image source={{ uri: props.poster }} style={styles.posterImage} />
-        <Image source={require("../../assets/play.png")} style={styles.playButton} />
-      </TouchableOpacity>
+      <ImageBackground source={{ uri: props.poster }} style={posterStyles} alt={props.altText}>
+        <TouchableOpacity onPress={() => setIsPlaying(true)}>
+          <Image source={require("../../assets/icons/play.png")} style={styles.playButton} />
+        </TouchableOpacity>
+      </ImageBackground>
     );
   }
 
   if (mediaType === "video") {
     return (
       <WebView
-        source={{ html: generateVideoHtml(props.sources, props.captionSources || []) }}
-        containerStyle={styles.videoContainer}
+        source={{ html: generateBodyHtml(generateVideoHtml(props.sources, props.captionSources)) }}
         scalesPageToFit
+        scrollEnabled={false}
+        containerStyle={videoContainerStyles}
+        style={styles.webView}
       />
     );
   }
   if (mediaType === "audio") {
-    return <WebView source={{ html: generateAudioHtml(props.sources) }} containerStyle={styles.container} />;
+    return (
+      <WebView
+        source={{ html: generateBodyHtml(generateAudioHtml(props.sources)) }}
+        scrollEnabled={false}
+        containerStyle={audioContainerStyles}
+        style={styles.webView}
+      />
+    );
   }
-  return <TextBlock type="TextBlock" text="Failed to render media" />;
+  return <TextBlock type="TextBlock" text="Failed to render media" color={Colors.Warning} />;
 };
 
 const styles = StyleSheet.create({
-  container: {
-    minHeight: 75,
-  },
-  videoContainer: {
-    minHeight: 150,
-  },
-  posterImage: {
-    resizeMode: "stretch",
-    minHeight: 75,
-  },
   playButton: {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: [{ translateX: -25 }, { translateY: -25 }],
     width: 50,
     height: 50,
+  },
+  webView: {
+    backgroundColor: "transparent",
   },
 });
