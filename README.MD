@@ -56,9 +56,9 @@
   - [x] poster
   - [x] altText
   - [x] captionSources
-- [ ] RichTextBlock
-  - [ ] inlines
-  - [ ] horizontalAlignment
+- [x] RichTextBlock
+  - [x] inlines
+  - [x] horizontalAlignment
 - [x] TextRun
   - [x] Date time formatting
   - [x] color
@@ -66,7 +66,7 @@
   - [x] highlight
   - [x] isSubtle
   - [x] italic
-  - [x] selectAction
+  - [-] selectAction
   - [x] size
   - [x] strikethrough
   - [x] underline
