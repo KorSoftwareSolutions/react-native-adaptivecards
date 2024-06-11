@@ -7,6 +7,7 @@ import { AdaptiveCardScreen } from "./screens/adaptive-card.screen";
 import { ImageScreen } from "./screens/image.screen";
 import { MediaScreen } from "./screens/media.screen";
 import { RichTextBlockScreen } from "./screens/rich-text-block.screen";
+import { ActionSetScreen } from "./screens/action-set.screen";
 
 export type IRootStackParamList = {
   Home: undefined;
@@ -15,6 +16,7 @@ export type IRootStackParamList = {
   Image: undefined;
   Media: undefined;
   RichTextBlock: undefined;
+  ActionSet: undefined;
 };
 
 declare global {
@@ -39,6 +41,7 @@ export const Router = () => {
       <RootStack.Screen name="Image" component={ImageScreen} />
       <RootStack.Screen name="Media" component={MediaScreen} />
       <RootStack.Screen name="RichTextBlock" component={RichTextBlockScreen} />
+      <RootStack.Screen name="ActionSet" component={ActionSetScreen} />
     </RootStack.Navigator>
   );
 };

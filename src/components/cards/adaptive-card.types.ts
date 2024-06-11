@@ -7,7 +7,7 @@ export interface IAdaptiveCard {
   refresh?: IRefresh;
   authentication?: IAuthentication;
   body?: ICardBody;
-  actions?: ICardActions;
+  actions?: IAction[];
   selectAction?: ISelectAction;
   fallbackText?: string;
   backgroundImage?: string | IBackgroundImage;
@@ -39,7 +39,7 @@ export type ICardBody = (
   | ITextBlock
 )[];
 
-export type ICardActions = (IActionExecute | IActionOpenUrl | IActionShowCard | IActionSubmit | IActionToggleVisibility)[];
+export type IAction = IActionExecute | IActionOpenUrl | IActionShowCard | IActionSubmit | IActionToggleVisibility;
 
 export type ISelectAction = IActionExecute | IActionOpenUrl | IActionSubmit | IActionToggleVisibility;
 
