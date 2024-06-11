@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Image as RNImage, StyleProp, ImageStyle as RNImageStyle, LayoutChangeEvent, TouchableOpacity, Alert } from "react-native";
+import { Image as RNImage, StyleProp, ImageStyle as RNImageStyle, LayoutChangeEvent, TouchableOpacity, Alert, ViewStyle } from "react-native";
 import { IImage, ImageStyle } from "./image.types";
 import { BlockElementHeight, HorizontalAlignment, ImageSize, Spacing } from "../../utils/design-tokens";
 import { ImageStyles } from "./image.styles";
@@ -46,6 +46,12 @@ export const Image = (providedProps: IImage) => {
   };
 
   const composedStyles: StyleProp<RNImageStyle> = [baseStyles];
+  if (props.style === ImageStyle.Person) {
+    const imageWidth = styles.getWidth(maxWidth);
+    if (typeof imageWidth === "number") composedStyles.push(styles.getPersonStyle(imageWidth));
+  }
+
+  const containerStyles: StyleProp<ViewStyle> = {};
 
   /* ******************** Functions ******************** */
   const onParentLayout = (e: LayoutChangeEvent) => {
@@ -68,7 +74,7 @@ export const Image = (providedProps: IImage) => {
 
   /* ******************** JSX ******************** */
   return (
-    <TouchableOpacity onPress={onPress} onLayout={onParentLayout} disabled={!props.selectAction}>
+    <TouchableOpacity onPress={onPress} onLayout={onParentLayout} disabled={!props.selectAction} style={containerStyles}>
       <RNImage source={{ uri: props.url }} alt={props.altText} style={composedStyles} />
     </TouchableOpacity>
   );

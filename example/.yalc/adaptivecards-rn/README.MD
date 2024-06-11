@@ -47,8 +47,8 @@
   - [x] backgroundColor
   - [x] height
   - [x] horizontalAlignment
-  - [ ] selectAction
-  - [ ] size
+  - [-] selectAction
+  - [x] size
   - [ ] style
   - [ ] width
 - [ ] Media

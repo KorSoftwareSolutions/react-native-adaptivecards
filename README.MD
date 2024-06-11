@@ -48,9 +48,9 @@
   - [x] height
   - [x] horizontalAlignment
   - [-] selectAction
-  - [ ] size
-  - [ ] style
-  - [ ] width
+  - [x] size
+  - [x] style
+  - [x] width
 - [ ] Media
 - [ ] MediaSource
 - [ ] CaptionSource

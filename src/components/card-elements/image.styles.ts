@@ -67,4 +67,11 @@ export class ImageStyles {
     if (imageWidth === undefined) return parentWidth;
     return Math.min(parentWidth, imageWidth);
   }
+
+  getPersonStyle(size?: number): RNImageStyle {
+    return {
+      borderRadius: size ? size / 2 : 0,
+      alignSelf: "center",
+    };
+  }
 }
