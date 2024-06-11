@@ -30,6 +30,7 @@ export const HomeScreen = () => {
       <MenuItem text="Adaptive Card" onPress={() => navigate("AdaptiveCard")} />
       <MenuItem text="TextBlock" onPress={() => navigate("TextBlock")} />
       <MenuItem text="Image" onPress={() => navigate("Image")} />
+      <MenuItem text="Media" onPress={() => navigate("Media")} />
     </ScrollView>
   );
 };

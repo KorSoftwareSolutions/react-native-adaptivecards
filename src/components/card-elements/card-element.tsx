@@ -32,6 +32,7 @@ export const CardElement = (providedProps: React.PropsWithChildren<ICardElement>
     <>
       {props.separator && <Separator />}
       {props.children}
+      {props.separator && <Separator hideLine />}
     </>
   );
 };

@@ -1,21 +1,12 @@
 {
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
+  "version": "1.6",
+  "fallbackText": "This card requires CaptionSource to be viewed. Ask your platform to update to Adaptive Cards v1.6 for this and more!",
   "body": [
     {
       "type": "Media",
-      "poster": "https://adaptivecards.io/content/poster-audio.jpg",
-      "altText": "Adaptive Cards overview audio",
-      "sources": [
-        {
-          "mimeType": "audio/mpeg",
-          "url": "https://adaptivecardsblob.blob.core.windows.net/assets/AdaptiveCardsOverviewVideo.mp3"
-        }
-      ]
-    },
-    {
-      "type": "Media",
-      "poster": "https://adaptivecards.io/content/poster-audio.jpg",
-      "altText": "Adaptive Cards overview audio",
+      "poster": "https://adaptivecards.io/content/poster-video.png",
       "sources": [
         {
           "mimeType": "video/mp4",
@@ -35,8 +26,5 @@
         }
       ]
     }
-  ],
-  "actions": [],
-  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-  "version": "1.6"
+  ]
 }

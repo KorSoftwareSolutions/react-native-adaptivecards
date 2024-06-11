@@ -5,12 +5,14 @@ import { HomeScreen } from "./screens/home.screen";
 import { initialWindowMetrics } from "react-native-safe-area-context";
 import { AdaptiveCardScreen } from "./screens/adaptive-card.screen";
 import { ImageScreen } from "./screens/image.screen";
+import { MediaScreen } from "./screens/media.screen";
 
 export type IRootStackParamList = {
   Home: undefined;
   AdaptiveCard: undefined;
   TextBlock: undefined;
   Image: undefined;
+  Media: undefined;
 };
 
 declare global {
@@ -33,6 +35,7 @@ export const Router = () => {
       <RootStack.Screen name="AdaptiveCard" component={AdaptiveCardScreen} />
       <RootStack.Screen name="TextBlock" component={TextBlockScreen} />
       <RootStack.Screen name="Image" component={ImageScreen} />
+      <RootStack.Screen name="Media" component={MediaScreen} />
     </RootStack.Navigator>
   );
 };

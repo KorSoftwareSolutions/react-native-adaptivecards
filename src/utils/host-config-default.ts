@@ -118,7 +118,8 @@ export const defaultHostConfig: IHostConfig = {
   },
   separator: {
     lineThickness: 1,
-    lineColor: "#B2000000",
+    lineColor: "lightgrey",
+    spacing: 5,
   },
   media: {
     allowInlinePlayback: true,

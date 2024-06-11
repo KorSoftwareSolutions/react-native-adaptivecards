@@ -81,6 +81,7 @@ export type ISpacingConfig = Record<Spacing, number>;
 export interface ISeparatorConfig {
   lineThickness?: number;
   lineColor?: string;
+  spacing?: number; // Not on the docs https://learn.microsoft.com/en-us/adaptive-cards/rendering-cards/host-config
 }
 
 export interface IMediaConfig {

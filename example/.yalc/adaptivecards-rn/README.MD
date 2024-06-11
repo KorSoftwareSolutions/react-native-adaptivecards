@@ -49,18 +49,20 @@
   - [x] horizontalAlignment
   - [-] selectAction
   - [x] size
-  - [ ] style
-  - [ ] width
+  - [x] style
+  - [x] width
 - [ ] Media
-- [ ] MediaSource
-- [ ] CaptionSource
+  - [ ] sources
+  - [ ] poster
+  - [ ] altText
+  - [ ] captionSources
 - [ ] RichTextBlock
 - [ ] TextRun
 
 ### Card Element
 
 - [ ] Fallback
-- [ ] Separator
+- [x] Separator
 - [ ] Spacing
 - [ ] Id
 - [x] IsVisible
