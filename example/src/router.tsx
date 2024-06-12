@@ -8,6 +8,11 @@ import { ImageScreen } from "./screens/image.screen";
 import { MediaScreen } from "./screens/media.screen";
 import { RichTextBlockScreen } from "./screens/rich-text-block.screen";
 import { ActionSetScreen } from "./screens/action-set.screen";
+import { ActionExecuteScreen } from "./screens/action-execute.screen";
+import { ActionOpenUrlScreen } from "./screens/action-openurl.screen";
+import { ActionShowCardScreen } from "./screens/action-showcard.screen";
+import { ActionSubmitScreen } from "./screens/action-submit.screen";
+import { ActionToggleVisibilityScreen } from "./screens/action-togglevisibility.screen";
 
 export type IRootStackParamList = {
   Home: undefined;
@@ -17,6 +22,11 @@ export type IRootStackParamList = {
   Media: undefined;
   RichTextBlock: undefined;
   ActionSet: undefined;
+  ActionExecute: undefined;
+  ActionOpenUrl: undefined;
+  ActionShowCard: undefined;
+  ActionSubmit: undefined;
+  ActionToggleVisibility: undefined;
 };
 
 declare global {
@@ -42,6 +52,11 @@ export const Router = () => {
       <RootStack.Screen name="Media" component={MediaScreen} />
       <RootStack.Screen name="RichTextBlock" component={RichTextBlockScreen} />
       <RootStack.Screen name="ActionSet" component={ActionSetScreen} />
+      <RootStack.Screen name="ActionExecute" component={ActionExecuteScreen} />
+      <RootStack.Screen name="ActionOpenUrl" component={ActionOpenUrlScreen} />
+      <RootStack.Screen name="ActionShowCard" component={ActionShowCardScreen} />
+      <RootStack.Screen name="ActionSubmit" component={ActionSubmitScreen} />
+      <RootStack.Screen name="ActionToggleVisibility" component={ActionToggleVisibilityScreen} />
     </RootStack.Navigator>
   );
 };

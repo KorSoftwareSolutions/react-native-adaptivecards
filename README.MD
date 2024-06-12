@@ -95,12 +95,22 @@
 - [ ] TableCell
 
 ## Actions
-
+- [ ] ActionButton
+  - [x] title
+  - [x] iconUrl
+  - [x] id
+  - [x] style
+  - [ ] fallback
+  - [ ] tooltip
+  - [x] isEnabled
+  - [ ] requires
+- [ ] ActionsContainer
+  - [x] mode
 - [ ] ActionOpenUrl
   - [ ]
 - [ ] ActionSubmit
   - [ ]
 - [ ] ActionShowCard
-  - [ ]
+  - [x] ShowCard
 - [ ] ActionToggleVisibility
   - [ ]

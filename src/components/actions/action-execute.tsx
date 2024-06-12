@@ -1,20 +1,18 @@
 import React from "react";
-import { IActionOpenUrl, IActionOpenUrlProps } from "./action-openurl.types";
+import { IActionExecute, IActionExecuteProps } from "./action-execute.types";
+import { AssociatedInputs } from "./action.types";
 import { ActionButton } from "./components/action-button";
 
-const DEFAULT_PROPS: IActionOpenUrlProps = {
-  url: "",
+const DEFAULT_PROPS: IActionExecuteProps = {
+  associatedInputs: AssociatedInputs.Auto,
 };
 
-export const ActionOpenUrl = (providedProps: IActionOpenUrl) => {
+export const ActionExecute = (providedProps: IActionExecute) => {
   const props = { ...DEFAULT_PROPS, ...providedProps };
   /* ******************** Hooks ******************** */
   /* ******************** Variables ******************** */
-
   /* ******************** Functions ******************** */
-  const onPress = () => {
-    console.log("Opening URL: ", props.url);
-  };
+  const onPress = () => {};
 
   /* ******************** Effects ******************** */
   /* ******************** JSX ******************** */

@@ -1,4 +1,9 @@
 import { BlockElementHeight, Spacing } from "../../utils/design-tokens";
+import { IActionSet } from "../containers/action-set.types";
+import { IImage } from "./image.types";
+import { IMedia } from "./media.types";
+import { IRichTextBlock } from "./rich-text-block.types";
+import { ITextBlock } from "./text-block.types";
 
 export interface ICardElement {
   fallback?: ICardElementFallback;

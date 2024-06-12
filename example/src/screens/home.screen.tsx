@@ -34,6 +34,12 @@ export const HomeScreen = () => {
       <MenuItem text="RichTextBlock" onPress={() => navigate("RichTextBlock")} />
 
       <MenuItem text="ActionSet" onPress={() => navigate("ActionSet")} />
+
+      <MenuItem text="Action.Execute" onPress={() => navigate("ActionExecute")} />
+      <MenuItem text="Action.OpenUrl" onPress={() => navigate("ActionOpenUrl")} />
+      <MenuItem text="Action.ShowCard" onPress={() => navigate("ActionShowCard")} />
+      <MenuItem text="Action.Submit" onPress={() => navigate("ActionSubmit")} />
+      <MenuItem text="Action.ToggleVisibility" onPress={() => navigate("ActionToggleVisibility")} />
     </ScrollView>
   );
 };

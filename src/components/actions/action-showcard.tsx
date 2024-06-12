@@ -1,21 +1,28 @@
 import React from "react";
-import { IActionOpenUrl, IActionOpenUrlProps } from "./action-openurl.types";
+import { IActionShowCardProps } from "./action-showcard.types";
 import { ActionButton } from "./components/action-button";
+import { useHostConfig } from "../../hooks/useHostConfig";
 
-const DEFAULT_PROPS: IActionOpenUrlProps = {
-  url: "",
+const DEFAULT_PROPS: IActionShowCardProps = {
+  card: {
+    type: "AdaptiveCard",
+    version: "1.0",
+    body: [],
+  },
 };
 
-export const ActionOpenUrl = (providedProps: IActionOpenUrl) => {
+export const ActionShowCard = (providedProps: IActionShowCardProps) => {
   const props = { ...DEFAULT_PROPS, ...providedProps };
   /* ******************** Hooks ******************** */
+  const { card, setShowCard } = useHostConfig();
   /* ******************** Variables ******************** */
+  props.card.version = card.version;
 
   /* ******************** Functions ******************** */
   const onPress = () => {
-    console.log("Opening URL: ", props.url);
+    setShowCard({ ...props.card, version: card.version });
   };
-
+  
   /* ******************** Effects ******************** */
   /* ******************** JSX ******************** */
   return <ActionButton onPress={onPress} />;

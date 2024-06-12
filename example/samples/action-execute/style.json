@@ -1,0 +1,30 @@
+{
+  "type": "AdaptiveCard",
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.5",
+  "body": [],
+  "actions": [
+    {
+      "type": "Action.Execute",
+      "title": "Positive, Enabled",
+      "style": "positive"
+    },
+    {
+      "type": "Action.Execute",
+      "title": "Positive, Disabled",
+      "style": "positive",
+      "isEnabled": false
+    },
+    {
+      "type": "Action.Execute",
+      "title": "Destructive, Enabled",
+      "style": "destructive"
+    },
+    {
+      "type": "Action.Execute",
+      "title": "Destructive, Disabled",
+      "style": "destructive",
+      "isEnabled": false
+    }
+  ]
+}

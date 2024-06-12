@@ -4,8 +4,13 @@ import { ICardBody } from "../components/cards/adaptive-card.types";
 import { Image } from "../components/card-elements/image";
 import { Media } from "../components/card-elements/media";
 import { RichTextBlock } from "../components/card-elements/rich-text-block";
+import { ActionOpenUrl } from "../components/actions/action-openurl";
+import { IAction } from "../components/actions/action.types";
+import { ActionExecute } from "../components/actions/action-execute";
+import { ActionShowCard } from "../components/actions/action-showcard";
+import { ActionSubmit } from "../components/actions/action-submit";
 
-const getElement = (type: ICardBody[number]["type"]) => {
+const getCardElement = (type: ICardBody[number]["type"]) => {
   switch (type) {
     case "TextBlock":
       return TextBlock;
@@ -20,4 +25,21 @@ const getElement = (type: ICardBody[number]["type"]) => {
   }
 };
 
-export const elementFactory = { getElement };
+const getActionElement = (type: IAction["type"]) => {
+  switch (type) {
+    case "Action.OpenUrl":
+      return ActionOpenUrl;
+    case "Action.Execute":
+      return ActionExecute;
+    case "Action.Submit":
+      return ActionSubmit;
+    case "Action.ShowCard":
+      return ActionShowCard;
+    case "Action.ToggleVisibility":
+      return null;
+    default:
+      return null;
+  }
+};
+
+export const elementFactory = { getCardElement, getActionElement };

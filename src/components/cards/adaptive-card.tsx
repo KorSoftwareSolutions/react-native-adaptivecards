@@ -7,6 +7,8 @@ import { CardElement } from "../card-elements/card-element";
 import { IHostConfig } from "../../utils/host-config-models";
 import { AdaptiveCardProvider } from "../../hooks/useHostConfig";
 import { AdaptiveCardContainer } from "./adaptive-card-container";
+import { ActionsContainer } from "../actions/components/actions-container";
+import { ActionShowCardCard } from "../actions/components/action-showcard-card";
 
 export type IAdaptiveCardProps = {
   payload: IAdaptiveCard;
@@ -34,10 +36,10 @@ export const AdaptiveCard = (props: IAdaptiveCardProps) => {
   }
 
   return (
-    <AdaptiveCardProvider hostConfig={props.hostConfig}>
+    <AdaptiveCardProvider hostConfig={props.hostConfig} card={props.payload}>
       <AdaptiveCardContainer {...props.payload}>
         {props.payload.body?.map((element, index) => {
-          const Element = elementFactory.getElement(element.type);
+          const Element = elementFactory.getCardElement(element.type);
           if (!Element) {
             return null;
           }
@@ -47,14 +49,9 @@ export const AdaptiveCard = (props: IAdaptiveCardProps) => {
             </CardElement>
           );
         })}
-        {props.payload.actions?.map((action, index) => {
-          const Element = elementFactory.getElement(action.type);
-          if (!Element) {
-            return null;
-          }
-          return <Element {...action} key={index} />;
-        })}
+        {!!props.payload.actions && <ActionsContainer actions={props.payload.actions} />}
       </AdaptiveCardContainer>
+      <ActionShowCardCard />
     </AdaptiveCardProvider>
   );
 };

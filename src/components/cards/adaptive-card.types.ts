@@ -1,5 +1,14 @@
 import { HorizontalAlignment, ImageFillMode, VerticalAlignment } from "../../utils/design-tokens";
+import { IActionExecute } from "../actions/action-execute.types";
+import { IActionOpenUrl } from "../actions/action-openurl.types";
+import { IActionSubmit } from "../actions/action-submit.types";
+import { IActionToggleVisibility } from "../actions/action-togglevisibility.types";
+import { IAction } from "../actions/action.types";
+import { IImage } from "../card-elements/image.types";
+import { IMedia } from "../card-elements/media.types";
+import { IRichTextBlock } from "../card-elements/rich-text-block.types";
 import { ITextBlock } from "../card-elements/text-block.types";
+import { IActionSet } from "../containers/action-set.types";
 
 export interface IAdaptiveCard {
   type: "AdaptiveCard";
@@ -39,8 +48,6 @@ export type ICardBody = (
   | ITextBlock
 )[];
 
-export type IAction = IActionExecute | IActionOpenUrl | IActionShowCard | IActionSubmit | IActionToggleVisibility;
-
 export type ISelectAction = IActionExecute | IActionOpenUrl | IActionSubmit | IActionToggleVisibility;
 
 export interface IRefresh {
@@ -67,13 +74,6 @@ export interface IAuthCardButton {
   value: string;
   title?: string;
   image?: string;
-}
-
-export interface IActionExecute {
-  type: "Action.Execute";
-  verb?: string;
-  data?: string | object;
-  associatedInputs?: IAssociatedInputs;
 }
 
 export interface IBackgroundImage {

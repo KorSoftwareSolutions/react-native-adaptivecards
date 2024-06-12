@@ -1,4 +1,10 @@
-export interface IActionBase {
+import { IAction } from "../action.types";
+
+export interface IActionWrapperProps {
+  type: IAction["type"];
+}
+
+export interface IActionWrapper {
   title?: string;
   iconUrl?: string;
   id?: string;

@@ -1,5 +1,5 @@
+import { IAction } from "../actions/action.types";
 import { ICardElement } from "../card-elements/card-element.types";
-import { IAction } from "../cards/adaptive-card.types";
 
 export interface IActionSetProps {
   actions: IAction[];

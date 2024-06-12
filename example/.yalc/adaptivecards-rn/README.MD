@@ -84,7 +84,7 @@
 ## Containers
 
 - [ ] ActionSet
-  - [ ] 
+  - [ ]
 - [ ] Container
 - [ ] ColumnSet
 - [ ] Column
@@ -93,3 +93,24 @@
 - [ ] ImageSet
 - [ ] Table
 - [ ] TableCell
+
+## Actions
+- [ ] ActionButton
+  - [x] title
+  - [x] iconUrl
+  - [x] id
+  - [x] style
+  - [ ] fallback
+  - [ ] tooltip
+  - [x] isEnabled
+  - [ ] requires
+- [ ] ActionsContainer
+  - [x] mode
+- [ ] ActionOpenUrl
+  - [ ]
+- [ ] ActionSubmit
+  - [ ]
+- [ ] ActionShowCard
+  - [ ]
+- [ ] ActionToggleVisibility
+  - [ ]

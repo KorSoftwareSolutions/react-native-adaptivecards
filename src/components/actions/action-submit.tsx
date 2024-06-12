@@ -1,21 +1,21 @@
 import React from "react";
-import { IActionOpenUrl, IActionOpenUrlProps } from "./action-openurl.types";
+import { IActionSubmitProps } from "./action-submit.types";
+import { AssociatedInputs } from "./action.types";
 import { ActionButton } from "./components/action-button";
 
-const DEFAULT_PROPS: IActionOpenUrlProps = {
-  url: "",
+const DEFAULT_PROPS: IActionSubmitProps = {
+  associatedInputs: AssociatedInputs.Auto,
 };
 
-export const ActionOpenUrl = (providedProps: IActionOpenUrl) => {
+export const ActionSubmit = (providedProps: IActionSubmitProps) => {
   const props = { ...DEFAULT_PROPS, ...providedProps };
   /* ******************** Hooks ******************** */
   /* ******************** Variables ******************** */
-
   /* ******************** Functions ******************** */
   const onPress = () => {
-    console.log("Opening URL: ", props.url);
+    console.log("Action.Submit pressed");
   };
-
+  
   /* ******************** Effects ******************** */
   /* ******************** JSX ******************** */
   return <ActionButton onPress={onPress} />;
